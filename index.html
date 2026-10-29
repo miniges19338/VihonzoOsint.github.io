@@ -1,20 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Vihonzo OSINT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vihonzo OSINT | Field Manual</title>
     <style>
-        body { background: #0a0a0a; color: #00ff00; font-family: monospace; text-align: center; padding: 50px; }
-        h1 { font-size: 40px; text-shadow: 0 0 10px #00ff00; }
-        p { font-size: 18px; }
-        .box { border: 1px solid #00ff00; padding: 20px; display: inline-block; margin-top: 20px; }
+        :root {
+            --bg: #0a0a0a;
+            --text: #00ff00;
+            --accent: #008800;
+            --border: #1a3a1a;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        header {
+            border-bottom: 2px solid var(--text);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        h1 { margin: 0; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 10px var(--text); }
+        h2 { color: #fff; border-left: 4px solid var(--text); padding-left: 10px; margin-top: 40px;}
+        h3 { color: #aaa; margin-bottom: 5px;}
+        p { color: #ccc; font-size: 16px;}
+        a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--text); }
+        a:hover { background-color: var(--text); color: var(--bg); }
+        .container { max-width: 900px; margin: 0 auto; }
+        .terminal-box {
+            background: #000;
+            border: 1px solid var(--border);
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: inset 0 0 10px rgba(0,255,0,0.1);
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .tool-card {
+            border: 1px solid var(--border);
+            padding: 15px;
+            background: #111;
+        }
+        .tool-card:hover { border-color: var(--text); }
+        ul { list-style-type: square; }
     </style>
 </head>
 <body>
-    <h1>Vihonzo OSINT</h1>
-    <p>Сайт успешно запущен.</p>
-    <div class="box">
-        <p>Терминал: [OK]</p>
-        <p>Статус: В сети</p>
+    <div class="container">
+        <header>
+            <h1>Vihonzo OSINT</h1>
+            <p>Open Source Intelligence Field Manual</p>
+            <p style="font-size: 12px;">[ STATUS: ONLINE ] [ USER: ANON ]</p>
+        </header>
+
+        <div class="terminal-box">
+            > INITIALIZING OSINT FRAMEWORK...<br>
+            > LOADING MODULES: [USERNAME, EMAIL, PHONE, IMAGE, NETWORK]<br>
+            > ALL SYSTEMS OPERATIONAL.
+        </div>
+
+        <h2>01. What is OSINT?</h2>
+        <p>Open Source Intelligence (OSINT) is the practice of collecting and analyzing information from publicly available sources. It is not hacking; it is the art of connecting dots that are already on the internet. Every post, like, comment, and public record leaves a digital footprint. OSINT is about finding those footprints.</p>
+
+        <h2>02. Core Techniques</h2>
+        
+        <h3>> Username Enumeration</h3>
+        <p>People often use the same nickname across multiple platforms. By finding one username, you can map a person's entire digital presence (social media, forums, gaming accounts).</p>
+        
+        <h3>> Email & Phone Lookup</h3>
+        <p>Emails and phone numbers are connected to data breaches, account registrations, and public directories. Checking if an email was pwned in a data breach is step one.</p>
+        
+        <h3>> Image Forensics (Reverse Search)</h3>
+        <p>Finding where an image was taken or if it's fake. Using reverse image search engines and analyzing EXIF metadata (GPS coordinates, camera model) left in the file.</p>
+        
+        <h3>> Network Reconnaissance</h3>
+        <p>Mapping domains, finding subdomains, and checking open ports. This is useful for cybersecurity analysts to find vulnerabilities in their own systems.</p>
+
+        <h2>03. Recommended Tools (Open Source)</h2>
+        <p>These are legitimate, legal tools used by researchers, journalists, and penetration testers worldwide.</p>
+        
+        <div class="tools-grid">
+            <div class="tool-card">
+                <h3>Username Search</h3>
+                <p>Find accounts by nickname across 400+ sites.</p>
+                <ul>
+                    <li><a href="https://whatsmyname.app/" target="_blank">WhatsMyName</a></li>
+                    <li><a href="https://instantusername.com/" target="_blank">Instant Username</a></li>
+                </ul>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Data Breaches</h3>
+                <p>Check if your email or phone was leaked.</p>
+                <ul>
+                    <li><a href="https://haveibeenpwned.com/" target="_blank">Have I Been Pwned</a></li>
+                    <li><a href="https://dehashed.com/" target="_blank">DeHashed (Paid)</a></li>
+                </ul>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Image & Geo</h3>
+                <p>Reverse image search and geolocation.</p>
+                <ul>
+                    <li><a href="https://yandex.com/images/" target="_blank">Yandex Images</a></li>
+                    <li><a href="https://tineye.com/" target="_blank">TinEye</a></li>
+                    <li><a href="https://www.suncalc.org/" target="_blank">SunCalc (Shadows)</a></li>
+                </ul>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Network & Domain</h3>
+                <p>Analyze websites and IP addresses.</p>
+                <ul>
+                    <li><a href="https://dnsdumpster.com/" target="_blank">DNSDumpster</a></li>
+                    <li><a href="https://www.shodan.io/" target="_blank">Shodan (IoT Search)</a></li>
+                    <li><a href="https://crt.sh/" target="_blank">crt.sh (Certificates)</a></li>
+                </ul>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Phone Numbers</h3>
+                <p>Identify carrier and region.</p>
+                <ul>
+                    <li><a href="https://www.truecaller.com/" target="_blank">Truecaller</a></li>
+                    <li><a href="https://getcontact.com/" target="_blank">GetContact</a></li>
+                </ul>
+            </div>
+
+            <div class="tool-card">
+                <h3>Google Dorking</h3>
+                <p>Use advanced Google search operators.</p>
+                <ul>
+                    <li><a href="https://www.exploit-db.com/google-hacking-database" target="_blank">GHDB (Exploit-DB)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>04. Advanced Search (Google Dorks)</h2>
+        <p>Google Dorks are search queries that use advanced operators to find hidden information. Examples:</p>
+        <div class="terminal-box">
+            site:*.gov.ua "index of"<br>
+            intext:"password" filetype:txt<br>
+            site:vk.com "user" inurl:profile
+        </div>
+
+        <h2>05. Stay Legal</h2>
+        <p>OSINT is legal because it uses public data. However, using this information to stalk, dox, or harass individuals is a crime. Always respect privacy and follow the law.</p>
+
+        <footer style="margin-top: 50px; border-top: 1px solid var(--border); padding-top: 20px; text-align: center; font-size: 12px; color: #666;">
+            <p>Vihonzo OSINT Project // For Educational Purposes Only.</p>
+            <p>Hosted on GitHub Pages.</p>
+        </footer>
     </div>
 </body>
-</html>
+                            </html>
