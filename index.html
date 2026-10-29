@@ -26,8 +26,8 @@
             text-align: center;
         }
         h1 { margin: 0; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 10px var(--text); }
-        h2 { color: #fff; border-left: 4px solid var(--text); padding-left: 10px; margin-top: 40px;}
-        h3 { color: #aaa; margin-bottom: 5px;}
+        h2 { color: #fff; border-left: 4px solid var(--text); padding-left: 10px; margin-top: 40px; text-transform: uppercase;}
+        h3 { color: #00ff00; margin-bottom: 5px; margin-top: 25px;}
         p { color: #ccc; font-size: 16px;}
         a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--text); }
         a:hover { background-color: var(--text); color: var(--bg); }
@@ -50,8 +50,24 @@
             padding: 15px;
             background: #111;
         }
-        .tool-card:hover { border-color: var(--text); }
-        ul { list-style-type: square; }
+        .tool-card:hover { border-color: var(--text); box-shadow: 0 0 10px rgba(0,255,0,0.2);}
+        ul { list-style-type: square; color: #aaa;}
+        li { margin-bottom: 8px; }
+        .support-section {
+            background: #050505;
+            border: 1px dashed var(--text);
+            padding: 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        footer {
+            margin-top: 50px; 
+            border-top: 1px solid var(--border); 
+            padding-top: 20px; 
+            text-align: center; 
+            font-size: 12px; 
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -59,34 +75,42 @@
         <header>
             <h1>Vihonzo OSINT</h1>
             <p>Open Source Intelligence Field Manual</p>
-            <p style="font-size: 12px;">[ STATUS: ONLINE ] [ USER: ANON ]</p>
+            <p style="font-size: 12px;">[ STATUS: ONLINE ] [ USER: ANON ] [ ENCRYPTION: ENABLED ]</p>
         </header>
 
         <div class="terminal-box">
             > INITIALIZING OSINT FRAMEWORK...<br>
-            > LOADING MODULES: [USERNAME, EMAIL, PHONE, IMAGE, NETWORK]<br>
-            > ALL SYSTEMS OPERATIONAL.
+            > LOADING MODULES: [USERNAME, EMAIL, PHONE, IMAGE, NETWORK, SOCIAL_MEDIA, CRYPTO]<br>
+            > ALL SYSTEMS OPERATIONAL.<br>
+            > WELCOME TO THE MATRIX.
         </div>
 
         <h2>01. What is OSINT?</h2>
-        <p>Open Source Intelligence (OSINT) is the practice of collecting and analyzing information from publicly available sources. It is not hacking; it is the art of connecting dots that are already on the internet. Every post, like, comment, and public record leaves a digital footprint. OSINT is about finding those footprints.</p>
+        <p>Open Source Intelligence (OSINT) is the practice of collecting and analyzing information from publicly available sources. It is not hacking; it is the art of connecting dots that are already on the internet. Every post, like, comment, and public record leaves a digital footprint. OSINT is about finding those footprints. It is used by cybersecurity professionals, investigative journalists, law enforcement, and threat intelligence analysts to protect organizations and individuals.</p>
+        <p>In the modern digital era, data is the new oil. But unlike oil, data is scattered, unstructured, and often hidden in plain sight. OSINT is the methodology of refining that raw data into actionable intelligence without ever breaching a firewall or guessing a password.</p>
 
         <h2>02. Core Techniques</h2>
         
         <h3>> Username Enumeration</h3>
-        <p>People often use the same nickname across multiple platforms. By finding one username, you can map a person's entire digital presence (social media, forums, gaming accounts).</p>
+        <p>People often use the same nickname across multiple platforms. By finding one username, you can map a person's entire digital presence (social media, forums, gaming accounts, leaked databases). Tools automate this by checking thousands of websites for the existence of a profile with that specific handle. This is often the first step in digital profiling.</p>
         
         <h3>> Email & Phone Lookup</h3>
-        <p>Emails and phone numbers are connected to data breaches, account registrations, and public directories. Checking if an email was pwned in a data breach is step one.</p>
+        <p>Emails and phone numbers are connected to data breaches, account registrations, and public directories. Checking if an email was pwned in a data breach is step one. Step two involves analyzing the format of the email to find associated corporate domains, or using phone number lookup services to determine the carrier and region, which can help pinpoint a target's physical location.</p>
         
         <h3>> Image Forensics (Reverse Search)</h3>
-        <p>Finding where an image was taken or if it's fake. Using reverse image search engines and analyzing EXIF metadata (GPS coordinates, camera model) left in the file.</p>
+        <p>Finding where an image was taken or if it's fake. Using reverse image search engines like Yandex or Google Lens can find identical or similar images across the web. Advanced analysts also analyze EXIF metadata (GPS coordinates, camera model, timestamps) left in the file, or use shadow analysis (SunCalc) to determine the exact time and location a photo was taken based on the sun's position.</p>
         
         <h3>> Network Reconnaissance</h3>
-        <p>Mapping domains, finding subdomains, and checking open ports. This is useful for cybersecurity analysts to find vulnerabilities in their own systems.</p>
+        <p>Mapping domains, finding subdomains, and checking open ports. This is useful for cybersecurity analysts to find vulnerabilities in their own systems. Tools like Shodan act as a search engine for Internet-connected devices (IoT, servers, webcams), revealing open ports and default credentials. This helps defenders lock down their infrastructure before attackers find it.</p>
+
+        <h3>> Social Media Intelligence (SOCMINT)</h3>
+        <p>Analyzing social networks to understand relationships, affiliations, and behavioral patterns. By mapping out connections (friends, followers, groups joined), an investigator can build a graph of a person's network. This is crucial for understanding who influences whom, and how information spreads through a network.</p>
+
+        <h3>> Geolocation (GEOINT)</h3>
+        <p>Determining the physical location of a person or object based on digital clues. This involves correlating background objects in photos (buildings, signs, mountains) with satellite imagery (Google Earth), or analyzing weather data and shadows to pinpoint exact coordinates.</p>
 
         <h2>03. Recommended Tools (Open Source)</h2>
-        <p>These are legitimate, legal tools used by researchers, journalists, and penetration testers worldwide.</p>
+        <p>These are legitimate, legal tools used by researchers, journalists, and penetration testers worldwide. Use them responsibly and ethically.</p>
         
         <div class="tools-grid">
             <div class="tool-card">
@@ -95,6 +119,7 @@
                 <ul>
                     <li><a href="https://whatsmyname.app/" target="_blank">WhatsMyName</a></li>
                     <li><a href="https://instantusername.com/" target="_blank">Instant Username</a></li>
+                    <li><a href="https://namechk.com/" target="_blank">Namechk</a></li>
                 </ul>
             </div>
             
@@ -104,6 +129,7 @@
                 <ul>
                     <li><a href="https://haveibeenpwned.com/" target="_blank">Have I Been Pwned</a></li>
                     <li><a href="https://dehashed.com/" target="_blank">DeHashed (Paid)</a></li>
+                    <li><a href="https://leakcheck.io/" target="_blank">LeakCheck</a></li>
                 </ul>
             </div>
             
@@ -114,6 +140,7 @@
                     <li><a href="https://yandex.com/images/" target="_blank">Yandex Images</a></li>
                     <li><a href="https://tineye.com/" target="_blank">TinEye</a></li>
                     <li><a href="https://www.suncalc.org/" target="_blank">SunCalc (Shadows)</a></li>
+                    <li><a href="https://fotoforensics.com/" target="_blank">FotoForensics</a></li>
                 </ul>
             </div>
             
@@ -124,6 +151,7 @@
                     <li><a href="https://dnsdumpster.com/" target="_blank">DNSDumpster</a></li>
                     <li><a href="https://www.shodan.io/" target="_blank">Shodan (IoT Search)</a></li>
                     <li><a href="https://crt.sh/" target="_blank">crt.sh (Certificates)</a></li>
+                    <li><a href="https://www.virustotal.com/" target="_blank">VirusTotal</a></li>
                 </ul>
             </div>
             
@@ -133,6 +161,7 @@
                 <ul>
                     <li><a href="https://www.truecaller.com/" target="_blank">Truecaller</a></li>
                     <li><a href="https://getcontact.com/" target="_blank">GetContact</a></li>
+                    <li><a href="https://www.sync.me/" target="_blank">Sync.me</a></li>
                 </ul>
             </div>
 
@@ -146,20 +175,39 @@
         </div>
 
         <h2>04. Advanced Search (Google Dorks)</h2>
-        <p>Google Dorks are search queries that use advanced operators to find hidden information. Examples:</p>
+        <p>Google Dorks are search queries that use advanced operators to find hidden information. They are used to find exposed files, login pages, and vulnerable servers. Examples:</p>
         <div class="terminal-box">
             site:*.gov.ua "index of"<br>
             intext:"password" filetype:txt<br>
-            site:vk.com "user" inurl:profile
+            site:vk.com "user" inurl:profile<br>
+            intitle:"index of" "backup"<br>
+            filetype:pdf "confidential" "2024"
         </div>
 
-        <h2>05. Stay Legal</h2>
-        <p>OSINT is legal because it uses public data. However, using this information to stalk, dox, or harass individuals is a crime. Always respect privacy and follow the law.</p>
+        <h2>05. Deep Dive: The OSINT Workflow</h2>
+        <p>A professional OSINT investigation follows a strict methodology to ensure accuracy and legality:</p>
+        <ul>
+            <li><strong>1. Requirements:</strong> Define exactly what information you need. Are you looking for a person, a company, or a vulnerability?</li>
+            <li><strong>2. Collection:</strong> Gather data from public sources (search engines, social media, public records). Save everything (use screenshots and archive.org links).</li>
+            <li><strong>3. Processing:</strong> Filter out noise. Translate text, convert timestamps to a single timezone, remove duplicates.</li>
+            <li><strong>4. Analysis:</strong> Connect the dots. Build timelines. Correlate geolocation data with social media posts. Verify facts using multiple independent sources.</li>
+            <li><strong>5. Reporting:</strong> Write down your findings with evidence. A good report clearly separates facts from assumptions.</li>
+        </ul>
 
-        <footer style="margin-top: 50px; border-top: 1px solid var(--border); padding-top: 20px; text-align: center; font-size: 12px; color: #666;">
+        <h2>06. Stay Legal & Ethical</h2>
+        <p>OSINT is legal because it uses public data. However, using this information to stalk, dox, or harass individuals is a crime. Always respect privacy and follow the law. The difference between a researcher and a cybercriminal is the intent and the respect for privacy. Never access private accounts, never bypass paywalls, and never use the data to cause harm.</p>
+
+        <div class="support-section">
+            <h2 style="border: none; text-align: center; margin-top: 0;">Support & Contact</h2>
+            <p>If you have questions, suggestions, or want to report a bug, reach out to the developer.</p>
+            <p style="font-size: 20px; font-weight: bold; color: #00ff00;">gajdukmartin117@gmail.com</p>
+            <p style="font-size: 12px; color: #666;">Use this email for educational purposes only.</p>
+        </div>
+
+        <footer>
             <p>Vihonzo OSINT Project // For Educational Purposes Only.</p>
             <p>Hosted on GitHub Pages.</p>
         </footer>
     </div>
 </body>
-                            </html>
+                                                                                                                                                                                          </html>
